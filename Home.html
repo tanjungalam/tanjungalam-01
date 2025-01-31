@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanjuang Alam Tanah Datar></title>
+   
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+                .expandable-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #expandableContent {
+            display: none;
+            margin-top: 20px;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        #expandableContent.visible {
+            display: block;
+        }
+
+        .transparent-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        /* Header Section */
+        .header {
+            background-image: url("Images/tanjung\ alam\ foto.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0%;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 5em;
+            font-weight: bold;
+            border: white;
+            color: rgb(255, 255, 255);
+        }
+        .header p {
+            margin: 10px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: white;
+            color: rgb(255, 255, 255);
+
+        }
+        .header .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 5px solid rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .header .btn:hover {
+            background-color: rgb(238, 238, 238);
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Navigation Header */
+        .nav-header {
+            background-color: #0078A0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        /* Logo Styling */
+        .nav-header .logo-link img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+
+        .nav-header .logo-link:hover img {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        /* Navigation Links */
+        .nav-header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 10px 15px;
+            background-color: #005f80;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-header .nav-links a:hover {
+            background-color: #FFD700;
+            color: #0078A0;
+            transform: translateY(-5px); /* Makes the box appear 3D */
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Action Buttons */
+        .nav-header .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-header .action-buttons a {
+            padding: 10px 15px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: #005f80;
+        }
+
+        .nav-header .action-buttons a:hover {
+            background-color: white;
+            color: #0078A0;
+            transform: translateY(-5px); /* Makes the button appear 3D */
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Info Section */
+        .info {
+            display: flex;
+            background-color: #0078A0;
+            color: white;
+            padding: 40px;
+            justify-content: center;
+        }
+        .info .box {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            background-color: rgb(154, 154, 154);
+            color: #0078A0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s; /* Tambahkan transisi */
+            cursor: pointer; /* Tambahkan pointer untuk klik */
+        }
+        .info .box:hover {
+            transform: translateY(-10px); /* Kotak naik sedikit */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+        }
+        .info .box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        /* New Section */
+        .additional-content {
+            display: flex;
+            padding: 40px;
+            justify-content: space-between;
+        }
+        .video-box {
+            flex: 1;
+            margin-left: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+        }
+        .video-box iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+            border-radius: 10px;
+        }
+        .info-boxes {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .info-box {
+            background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+            padding: 20px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        .info-box h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        /* Hospital Services Section */
+        .hospital-services {
+            background-image: url("Images/foto3.webp");
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hospital-services h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .hospital-services p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .hospital-services .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .hospital-services .service {
+            background-color: white;
+            color: #0078A0;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .hospital-services .service .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hospital-services .service h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .hospital-services .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 2px solid #0078A0;
+            color: #0078A0;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hospital-services .btn:hover {
+            background-color: #0078A0;
+            color: white;
+        }
+
+        /* Footer Styles */
+.footer {
+    background-color: #0078A0;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container div {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-container p {
+    line-height: 1.8;
+}
+
+.footer-container .social-links a {
+    display: inline-block;
+    margin: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.footer-container .social-links a:hover {
+    color: #FFD700; /* Warna efek hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+.text {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: larger;
+}
+    </style>
+</head>
+<body>
+
+   <!-- Navigation Header -->
+<div class="nav-header">
+    <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/Home.html" class="logo-link">
+        <img src="" alt="Tanjung Alam">
+    </a>
+    <div class="nav-links">
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/profile%20nagari.html">Profil</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/lembaga%20organisasi.html">Lembaga</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/organisasi.html">Organisasi Lainnya</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/info%20geografis.html">Info Geografis</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/kependudukan.html">Kependudukan</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/fasilitas%20nagari.html">Fasilitas Nagari</a>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/potensi%20pariwisata.html">Potensi Pariwisata</a>
+    </div>
+    <div class="action-buttons">
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/About.html">Bantuan</a>
+   
+    </div>
+</div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <p>SELAMAT DATANG DI PROFIL NAGARI</p>
+        <h1>Tanjuang Alam Tanah Datar</h1>
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/profile%20nagari.html" class="btn">Baca Lebih Lanjut</a>
+    </div>
+
+   <!-- <div class="navigationextend">
+        <center><h1>Extendsion Details</h1></center> <br><br> -->
+    </div>
+
+    <!-- Info Section -->
+    <div class="info">
+    <div class="box" data-url="https://example.com/ketua">
+        <h2>Wali Nagari</h2>
+        <img src="Images/Wali Nagari.jpg" alt="Ketua" height="300px" width="250px">
+        <div class="text">
+        <p>Kadiman Dt. Simarajo Nan Kayo</p>
+        </div>
+    </div>
+    <div class="box" data-url="https://example.com/sekretaris">
+        <h2>Sekretaris</h2>
+        <img src="Images/profile.png" alt="Sekre" height="300px" width="200px">
+        <div class="text">
+        <p>Yasrizal, SE</p>
+    </div>
+    </div>
+    <div class="box" data-url="https://example.com/bendahara">  
+        <h2>Bendahara</h2>
+        <img src="Images/profile.png" alt="Bendahara" height="300px" width="200px">
+        <div class="text">
+        <p>Resi Fitria Yulita, S.Pt</p>
+    </div>
+    </div>
+</div>
+
+
+
+    <!-- Additional Content -->
+    <div class="additional-content">
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>Pertanian </h3>
+                <p>Sektor Pertanian yang pada umumnya Masyarakat sekitar banyak mempunyai lahan yang biasa digunakan untuk bercocom tanam.</p>
+            </div>
+            <div class="info-box">
+                <h3>Perkebunan </h3>
+                <p>sama hal nya dengan Pertanian Masyarakat juga biasanya melakukan perkebunan seperti Wortel, kentang, dan lain lain..</p>
+            </div>
+            <div class="info-box">
+                <h3>Pariwisata </h3>
+                <p>Sektor Pariwisata yang banyak tentang hal air terjun dan pegunungan yang membuat Nagari Tanjuang Alam ini minat di datangi.</p>
+            </div>
+            <div class="info-box">
+                <h3>Fasilitas </h3>
+                <p>Nagari Tanjuang Alam ini juga Mempunyai banyak Fasilitas yang biasa digunakan pada umunya oleh Masyarakat..</p>
+            </div>
+        </div>
+        <div class="video-box">
+            <h3>Profil Video</h3>
+            <iframe src="deo/0101.mp4" title="Profil Video"></iframe>
+            <h4>Pemerintahan Nagari Tanjung Alam dijalankan berdasarkan peraturan-peraturan seperti Undang-Undang Nomor 6 Tahun 2014 tentang Desa, Peraturan Pemerintah Nomor 43 Tahun 2014, hingga Peraturan Bupati Tanah Datar terkait alokasi dana nagari. Laporan penyelenggaraan pemerintahan nagari disampaikan kepada Bupati, BPRN, dan masyarakat sebagai bentuk pertanggungjawaban</h4>
+        </div>
+    </div>
+
+    <!-- Hospital Services Section -->
+    <div class="hospital-services">
+        <h2>FASILITAS NAGARI</h2>
+        <p>Kami Menyediakan Fasilitas yang ada pada Tanjuang Alam.</p>
+        <div class="services">
+            <div class="service">
+                <div class="icon">👩‍⚕️</div>
+                <h3>Poskesdes</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon">📋</div>
+                <h3>SD & MIN</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon">📋</div>
+                <h3>SMP & MTSs</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon">💉</div>
+                <h3>Rumah Sakit</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon"></div>
+                <h3>Masjid & Musholla</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon"></div>
+                <h3>Kantor</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon"></div>
+                <h3>Pasar Swalayan </h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+            <div class="service">
+                <div class="icon"></div>
+                <h3>Pariwisata</h3>
+                <a href="#" class="btn">view all</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+  document.querySelectorAll('.info .box').forEach(box => {
+    box.addEventListener('click', () => {
+        const url = box.getAttribute('data-url');
+        if (url) {
+            window.location.href = url;
+        }
+    });
+});
+        const expandButton = document.getElementById('expandButton');
+        const expandableContent = document.getElementById('expandableContent');
+    
+        expandButton.addEventListener('click', () => {
+            expandableContent.classList.toggle('visible');
+        });
+    </script>
+    
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>Tentang Kami</h3>
+            <p>
+                Kami Mahasiswa KKN Universitas Andalas 2025 Membuat Profil Desa Tanjung Alam Tanah Datar
+            </p>
+        </div>
+        <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>Email: <a href="https://facebook.com" target="_blank">tanjungalam@gmail.com</a>
+            <p>Whatsaap:  <a href="https://twitter.com" target="_blank">+62 812 3456 7890</a>
+            <p>Alamat: Koto Laweh Tanah Baru </p>
+        </div>
+        <div class="footer-social">
+            <h3>Ikuti Kami</h3>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 - Nama Website Anda
+
+
+</body>
+</html>

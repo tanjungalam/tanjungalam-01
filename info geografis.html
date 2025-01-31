@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Geografis</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .nav-header {
+            background-color: #0078A0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            color: white;
+        }
+        .nav-header {
+            background-color: #0078A0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            color: white;
+        }
+        .nav-header img {
+            height: 50px;
+        }
+        .nav-header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-header .nav-links a:hover {
+            color: #FFD700;
+        }
+        .page-content {
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('map-background.jpg');
+            background-size: cover;
+            color: #333;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .content {
+            flex: 2;
+        }
+        .map {
+            flex: 1;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+        table th {
+            background-color: #0078A0;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #0078A0;
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            background-color: #0078A0;
+            color: white;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }        
+    </style>
+</head>
+<body>
+    <div class="nav-header">
+        <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/Home.html" class="logo-link">
+            <img src="" alt="Tanjung Alam">
+        <div class="nav-links">
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/profile%20nagari.html">Profil</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/lembaga%20organisasi.html">Lembaga</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/organisasi.html">Organisasi Lainnya</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/info%20geografis.html">Info Geografis</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/kependudukan.html">Kependudukan</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/fasilitas%20nagari.html">Fasilitas Nagari</a>
+            <a href="file:///C:/Users/testc/OneDrive/Desktop/Website%20Backup/Prime/potensi%20pariwisata.html">Potensi Pariwisata</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="content">
+            <h2><i class="fas fa-map-marked-alt"></i> Informasi Geografis</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keterangan</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luas Wilayah</td>
+                        <td>31,81 km²</td>
+                    </tr>
+                    <tr>
+                        <td>Ketinggian</td>
+                        <td>700 - 1.200 meter di atas permukaan laut</td>
+                    </tr>
+                    <tr>
+                        <td>Topografi</td>
+                        <td>Berbukit-bukit dan bergelombang</td>
+                    </tr>
+                    <tr>
+                        <td>Batas Utara</td>
+                        <td>Bukik Apik Nagari Padang Tarok</td>
+                    </tr>
+                    <tr>
+                        <td>Batas Selatan</td>
+                        <td>Nagari Tabek Patah</td>
+                    </tr>
+                    <tr>
+                        <td>Batas Barat</td>
+                        <td>Nagari Koto Tinggi Canduang</td>
+                    </tr>
+                    <tr>
+                        <td>Batas Timur</td>
+                        <td>Nagari Barulak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="map">
+            <!-- Google Maps Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31875.204121575004!2d100.333333!3d-0.333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4df27ed8c4725%3A0x0!2sNagari%20Tanjung%20Alam%2C%20Sumatera%20Barat!5e0!3m2!1sid!2sid!4v1688872658493!5m2!1sid!2sid" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Nagari Tanjung Alam | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
